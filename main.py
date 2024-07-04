@@ -1,25 +1,8 @@
 import pygame
+import random
 from classes.world import World
 from classes.agent import Agent
 from classes.constants import *
-
-MAX_MOVES_PER_GAME = 1000
-
-WORLD_SIZE = 4
-
-CELL_SIZE = 100
-MARGIN = 50
-SCREEN_WIDTH = WORLD_SIZE * CELL_SIZE + 2 * MARGIN + 100
-SCREEN_HEIGHT = WORLD_SIZE * CELL_SIZE + 2 * MARGIN + 50 
-
-# Cores
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-YELLOW = (255, 255, 0)
-GRAY = (200, 200, 200)
-
 
 def main():
     pygame.init()
@@ -85,7 +68,6 @@ def main():
 
 
 def action_to_string(action):
-    """ action_to_string: return a string from the given action """
     if action == GOFORWARD:
         return "GOFORWARD"
     if action == TURNRIGHT:
@@ -98,5 +80,6 @@ def action_to_string(action):
         return "GRAB"
     return "UNKNOWN ACTION"
 
-
-main()
+if __name__ == "__main__":
+    random.seed(9)
+    main()
